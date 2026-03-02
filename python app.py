@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import os
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 LOG_FILE = "logs/sample.log"
 
@@ -18,5 +18,6 @@ def index():
 
     return render_template('index.html', errors=errors)
 
-if _name_ == '_main_':
-    app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)
